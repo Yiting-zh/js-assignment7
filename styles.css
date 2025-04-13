@@ -38,28 +38,30 @@ button:focus {
 }
 
 .settings-btn {
-  position: absolute;
+  position: fixed;
   bottom: 30px;
   left: 30px;
 }
 
 .settings {
   position: absolute;
+  opacity: 0;  
+  pointer-events: none; 
   top: 0;
   left: 0;
   width: 100%;
   background-color: #6026ff;
   height: 70px;
   color: #ffffff;
-  display: flex;
   align-items: center;
   justify-content: center;
   transform: translateY(0);
-  transition: transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, pointer-events 0.3s ease-in-out;  
 }
 
-.settings.hide {
-  transform: translateY(-100%);
+.settings.show-settings {
+  opacity: 1;  
+  pointer-events: auto;  
 }
 
 .difficulty {
@@ -131,3 +133,4 @@ input {
   height: 100%;
   z-index: 1;
 }
+
